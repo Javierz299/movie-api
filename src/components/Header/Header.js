@@ -9,7 +9,7 @@ const Header = () => {
                     <Link to="/" >WatchList</Link>
                </div>
                <nav className="nav-container">
-                    <span><Link to="/" >Watch List</Link></span>
+                    <span><Link to="/" >Movie List</Link></span>
                     <span><Link to="/watched" >Watched</Link></span>
                     <span className="add-btn"><Link to="/add" >+ Add</Link></span>
                </nav>

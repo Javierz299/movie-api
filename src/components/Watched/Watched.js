@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const Watched = () => {
+const WatchedList = () => {
     return (
         <div>
-            movies Watched
+            Watcheds list
         </div>
     )
 }
+
+export default WatchedList;
