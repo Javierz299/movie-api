@@ -1,7 +1,7 @@
 import * as ACTION_TYPES from '../actions/action_types'
 
 const initialState = {
-    search_movie: "",
+    search_movie: null,
 };
 
 const Movie_Reducer = (state = initialState, action) => {
