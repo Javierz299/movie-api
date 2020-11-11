@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { useSelector } from 'react-redux'
 
 const WatchedList = () => {
-    const watched = useSelector(state => state.movie_reducer.watched_list)
-
-    
-
-    console.log('watched',watched)
+    //const watched = useSelector(state => state.movie_reducer.watched_list)
+        let getData = localStorage.getItem('watched')
+        let stored = JSON.parse(getData)
+    console.log('local watch',stored)        
+  
     return (
         <div>
-           {watched.length > 0 &&
-           watched.map(movie => (
+           {stored &&
+           stored.map(movie => (
            <h2>{movie.title}</h2>
            ))
 
