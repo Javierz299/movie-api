@@ -5,26 +5,30 @@ import * as ACTIONS from '../../store/actions/actions'
 import { useDispatch, useSelector } from 'react-redux'
 
 const MoiveCard = ({movie}) => {
-    //const watched = useSelector(state => state.movie_reducer.watched_list)
-    //const dispatch = useDispatch()
-    const [data, setData] = useState()
+    // const watched = useSelector(state => state.movie_reducer.watched_list)
+    // const dispatch = useDispatch()
+    const [filtered, setFilter] = useState([])
+    const [clicked, setClicked] = useState(false)
 
-    
-    let arr = JSON.parse(localStorage.getItem('watched'))
+    useEffect(() => {
+        setFilter(JSON.parse(localStorage.getItem('watched')))
+    },[clicked])
 
-    let filtered = arr === null ? null : arr.find(mov => mov.id === movie.id)
-
-    const local = (data) =>{
+    const local = (data) => {
         if(localStorage.getItem('watched') === null){
             localStorage.setItem('watched',JSON.stringify([data]))
         } else {
             let storage = localStorage.getItem('watched')
             let parse = JSON.parse(storage)
             localStorage.setItem('watched',JSON.stringify([data,...parse]))
-            console.log('update',storage)
+            setFilter(JSON.parse(localStorage.getItem('watched')))
+
+            setClicked(true)
         }
-        
+        //setClicked(false)
     }
+    console.log('filtered',filtered)
+    let change = filtered === null ? null : filtered.find(watched => watched.id === movie.id)
 
     return (
         <Fragment>
@@ -33,12 +37,13 @@ const MoiveCard = ({movie}) => {
             
             <img src={`${config.IMG_ENDPOINT}/${movie.poster_path}`} 
             alt={`${movie.title} Poster`} />
-            {!filtered ? 
+            {!change ? 
             <button onClick={() => local({
                 id: movie.id,
                 title: movie.title,
                 release: movie.release_date.substring(0,4),
-                img: movie.poster_path
+                img: movie.poster_path,
+                watched: true
             })}>
                 ADD TO WATCHLIST
                 </button> :

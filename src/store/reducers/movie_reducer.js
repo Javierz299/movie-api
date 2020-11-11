@@ -14,10 +14,10 @@ const Movie_Reducer = (state = initialState, action) => {
             }
         case ACTION_TYPES.WATCHED_MOVIE:
             console.log('reducer',action)
-            
+
             return {
                 ...state,
-                watched_list: [localStorage.setItem("watched",action.payload), ...localStorage.getItem('watched')]
+                watched_list: [action.payload,...state.watched_list]
             }
         default:
             return state;

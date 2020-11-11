@@ -12,7 +12,8 @@ const WatchedList = () => {
         <div>
            {stored &&
            stored.map(movie => (
-           <h2>{movie.title}</h2>
+               movie === null ? null : 
+           <h2 key={movie.id}>{movie.title}</h2>
            ))
 
            }
