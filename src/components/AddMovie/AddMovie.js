@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import SearchList from '../SearchList/SearchList'
 
-import { useSelector, useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const AddMovie = () => {
     const [query, setQuery] = useState("")
@@ -18,7 +18,7 @@ const AddMovie = () => {
         axios.get(`${config.API_ENDPOINT}/3/search/movie?api_key=${process.env.REACT_APP_KEY}&query=${query}`)
             .then(res => dispatch(ACTIONS.search_movie(res.data.results)))
     }
-    
+
     return (
         <div className="search-container">
             <div className="search-bar-wrapper" >
