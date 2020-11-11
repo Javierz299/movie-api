@@ -16,7 +16,7 @@ const Movie_Reducer = (state = initialState, action) => {
             console.log('reducer',action)
             return {
                 ...state,
-                watched_list: [...state.watched_list, action.payload]
+                watched_list: [action.payload, ...state.watched_list]
             }
         default:
             return state;
