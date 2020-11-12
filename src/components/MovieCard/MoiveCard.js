@@ -7,29 +7,28 @@ import { useDispatch, useSelector } from 'react-redux'
 const MoiveCard = ({movie}) => {
     // const watched = useSelector(state => state.movie_reducer.watched_list)
     // const dispatch = useDispatch()
-    const [filtered, setFilter] = useState([])
+    const [filtered, setFilter] = useState(null)
     const [clicked, setClicked] = useState(false)
+    let change = !filtered ? null : filtered.find(watched => watched.id === movie.id)
 
     useEffect(() => {
         setFilter(JSON.parse(localStorage.getItem('watched')))
     },[clicked])
 
     const local = (data) => {
-        if(localStorage.getItem('watched') === null){
-            localStorage.setItem('watched',JSON.stringify([data]))
-        } else {
-            let storage = localStorage.getItem('watched')
-            let parse = JSON.parse(storage)
+        let storage = localStorage.getItem('watched')
+        let parse = JSON.parse(storage)
+
+        if(storage === null){
+            setFilter(localStorage.setItem('watched',JSON.stringify([data])))
+            setClicked(true)
+            return;
+        } 
             localStorage.setItem('watched',JSON.stringify([data,...parse]))
             setFilter(JSON.parse(localStorage.getItem('watched')))
-
             setClicked(true)
-        }
-        //setClicked(false)
     }
-    console.log('filtered',filtered)
-    let change = filtered === null ? null : filtered.find(watched => watched.id === movie.id)
-
+    console.log('filtered',filtered,clicked)
     return (
         <Fragment>
             <h2>{movie.title}</h2>

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-import { useSelector } from 'react-redux'
+import config from '../../config/config'
+
 
 const WatchedList = () => {
     //const watched = useSelector(state => state.movie_reducer.watched_list)
@@ -10,10 +11,17 @@ const WatchedList = () => {
   
     return (
         <div>
+            {
+            !stored && <h2>Start adding to your list!</h2>
+            }
            {stored &&
            stored.map(movie => (
                movie === null ? null : 
-           <h2 key={movie.id}>{movie.title}</h2>
+            <div key={movie.id}>
+           <h2>{movie.title}</h2>
+           <img src={`${config.IMG_ENDPOINT}/${movie.img}`} 
+            alt={`${movie.title} Poster`} />
+            </div>
            ))
 
            }
