@@ -5,6 +5,7 @@ import config from '../../config/config'
 const MoiveCard = ({movie}) => {
     const [filtered, setFilter] = useState(null)
     const [clicked, setClicked] = useState(false)
+
     let change = !filtered ? null : filtered.find(watched => watched.id === movie.id)
 
     useEffect(() => {
@@ -38,6 +39,8 @@ const MoiveCard = ({movie}) => {
                 title: movie.title,
                 release: movie.release_date.substring(0,4),
                 img: movie.poster_path,
+                overview: movie.overview,
+                rating: movie.vote_average,
                 watched: true
             })}>
                 ADD TO WATCHLIST

@@ -10,7 +10,7 @@ const MovieList = () => {
     const [page, setPage] = useState(1)
 
     useEffect(() => { //https://api.themoviedb.org
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=${page}&include_adult=false`)
+        axios.get(`${config.API_ENDPOINT}/3/movie/popular?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=${page}&include_adult=false`)
             .then(response => setMovies(response.data))
        
     }, [page])
@@ -20,8 +20,8 @@ const MovieList = () => {
         <div>
             <h2>Popular movies</h2>
             {movies && <Pagnation page={page} setPage={setPage} totalPages={movies.total_pages}/>}
-            
-            {movies !== null ?
+
+            {movies &&
             movies.results.map(movie => (
                 //pass to component
             <div key={movie.id}>
@@ -31,8 +31,7 @@ const MovieList = () => {
                 alt={`${movie.title} Poster`} />
             </div> 
            
-            )) :
-            null
+            ))
             }
 
             {movies && <Pagnation page={page} setPage={setPage} totalPages={movies.total_pages}/>}
