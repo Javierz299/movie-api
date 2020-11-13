@@ -1,12 +1,8 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import config from '../../config/config'
-import * as ACTIONS from '../../store/actions/actions'
 
-import { useDispatch, useSelector } from 'react-redux'
 
 const MoiveCard = ({movie}) => {
-    // const watched = useSelector(state => state.movie_reducer.watched_list)
-    // const dispatch = useDispatch()
     const [filtered, setFilter] = useState(null)
     const [clicked, setClicked] = useState(false)
     let change = !filtered ? null : filtered.find(watched => watched.id === movie.id)
@@ -48,7 +44,6 @@ const MoiveCard = ({movie}) => {
                 </button> :
                 <button>WATCHED</button>
         }
-            
         </Fragment>
     )
 }

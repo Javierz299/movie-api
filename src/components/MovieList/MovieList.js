@@ -1,10 +1,33 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import config from '../../config/config'
+
+import axios from 'axios'
 
 const MovieList = () => {
+    const [movies, setMovies] = useState(null)
+
+    useEffect(() => {
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=1&include_adult=false`)
+            .then(response => setMovies(response.data))
+       
+    }, [])
+    console.log("movies",movies)
     return (
         <div>
-            list of Movies
+            <h2>Popular movies</h2>
+            {movies !== null ?
+            movies.results.map(movie => (
+                //pass to component
+            <div>
+                <h2>{movie.title}</h2>
+
+                <img src={`${config.IMG_ENDPOINT}/${movie.poster_path}`} 
+                alt={`${movie.title} Poster`} />
+            </div> 
+           
+            )) :
+            null
+            }
         </div>
     )
 }
