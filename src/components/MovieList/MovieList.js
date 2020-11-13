@@ -20,6 +20,7 @@ const MovieList = () => {
         <div>
             <h2>Popular movies</h2>
             {movies && <Pagnation page={page} setPage={setPage} totalPages={movies.total_pages}/>}
+            
             {movies !== null ?
             movies.results.map(movie => (
                 //pass to component
@@ -33,6 +34,9 @@ const MovieList = () => {
             )) :
             null
             }
+
+            {movies && <Pagnation page={page} setPage={setPage} totalPages={movies.total_pages}/>}
+
         </div>
     )
 }
