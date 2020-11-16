@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import WatchedCard from '../WatchedCard/WatchedCard'
 
@@ -14,7 +14,7 @@ const WatchedList = () => {
             
            {stored && stored.map(movie => (
                movie === null ? null : 
-            <div key={movie.id} >
+            <div className="watched-movies-card" key={movie.id} >
                     <div>
                         <WatchedCard movie={movie}/>
                     </div> 

@@ -1,7 +1,30 @@
-.watched{
+/* .overview{
+    border: 1px solid black;
+    display: block;
+    width: 200px;
+    height: auto;
+    animation-name: overview-out;
+    animation-duration: 2s;
+} */
 
+.overview-transition{
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 200px;
+    height: auto;
+    animation-name: overview-in;
+    animation-duration: 1s;
 }
 
-.watched_flip:hover{
-    
-}
+@keyframes overview-in {
+    0%   {opacity: 0;}
+    25%  {opacity: .2;}
+    50%  {opacity: .5;}
+    100% {opacity: 1;}
+  }
+  @keyframes overview-out {
+    0%   {opacity: 1;}
+    25%  {opacity: .5;}
+    50%  {opacity: .2;}
+    100% {opacity: 0;}
+  }

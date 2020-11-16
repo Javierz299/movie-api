@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from 'react'
+import '../Watched/watched.css'
+
 import config from '../../config/config'
 
 const WatchedCard = ({movie}) => {
@@ -7,13 +9,18 @@ const WatchedCard = ({movie}) => {
         <Fragment>
             <h2>{movie.title}</h2>
             {!overview ?
-                <img onClick={() => setOverview(!overview)}
+                <img className={!overview ? "overview" : "overview-transition"}
+                onClick={() => setOverview(!overview)}
                 src={`${config.IMG_ENDPOINT}/${movie.img}`} 
                 alt={`${movie.title} Poster`} /> :
-               <p onClick={() => setOverview(!overview)}>
+            <div>
+                <p className={overview ? "overview-transition" : "overview"} 
+               onClick={() => setOverview(!overview)}>
                {movie.overview}
                </p>
+            </div>
             }
+            
         </Fragment>
     )
 }
