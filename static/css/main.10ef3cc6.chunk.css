@@ -1,0 +1,2 @@
+body{box-sizing:border-box}.App{text-align:center}.App-header,.overview-transition{border:1px solid #000}.overview-transition{margin:0 auto;width:200px;height:auto;animation-name:overview-in;animation-duration:1s}@keyframes overview-in{0%{opacity:0}25%{opacity:.2}50%{opacity:.5}to{opacity:1}}@keyframes overview-out{0%{opacity:1}25%{opacity:.5}50%{opacity:.2}to{opacity:0}}
+/*# sourceMappingURL=main.10ef3cc6.chunk.css.map */
