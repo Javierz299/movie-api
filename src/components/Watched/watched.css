@@ -7,6 +7,10 @@
     animation-duration: 1s;
 }
 
+.no-movies-yet{
+  color: whitesmoke;
+}
+
 .watched-movies-container{
   display: inline-block;
   width: 200px;

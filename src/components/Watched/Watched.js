@@ -10,7 +10,7 @@ const WatchedList = () => {
     
         return (
         <div>
-            { !stored && <h2>Start adding to your list!</h2> }
+            { !stored && <h2 className="no-movies-yet">Start adding to your list!</h2> }
             
            {stored && stored.map(movie => (
                movie === null ? null : 
