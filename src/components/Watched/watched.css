@@ -1,12 +1,3 @@
-/* .overview{
-    border: 1px solid black;
-    display: block;
-    width: 200px;
-    height: auto;
-    animation-name: overview-out;
-    animation-duration: 2s;
-} */
-
 .overview-transition{
     border: 1px solid black;
     margin: 0 auto;

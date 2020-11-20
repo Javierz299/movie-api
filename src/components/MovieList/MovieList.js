@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import config from '../../config/config'
+import MovieListCard from '../MovieListCard/MovieListCard'
 
 import Pagnation from '../Pagnation/Pagnation'
 
@@ -17,18 +18,15 @@ const MovieList = () => {
     console.log("movies",movies)
     console.log('page',page)
     return (
-        <div>
+        <div className="movie-list-container">
             <h2>Popular movies</h2>
             {movies && <Pagnation page={page} setPage={setPage} totalPages={movies.total_pages}/>}
 
             {movies &&
             movies.results.map(movie => (
                 //pass to component
-            <div key={movie.id}>
-                <h2>{movie.title}</h2>
-
-                <img src={`${config.IMG_ENDPOINT}/${movie.poster_path}`} 
-                alt={`${movie.title} Poster`} />
+            <div className="movie-list-box" key={movie.id}>
+                <MovieListCard movie={movie}/>
             </div> 
            
             ))

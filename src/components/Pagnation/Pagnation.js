@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Pagnation/pagnation.css'
 
 const Pagnation = ({page,setPage,totalPages}) => {
     const adjustPage = (amount) => {
@@ -6,7 +7,7 @@ const Pagnation = ({page,setPage,totalPages}) => {
     }
     console.log('totalpages',totalPages)
     return (
-        <div>
+        <div className="pagnation-container">
            {page !== 1 && <span onClick={() => adjustPage(-1)} >{"Prev"}</span>}
             {page !== 1 && <span onClick={() => setPage(1)} >1</span>}
 
