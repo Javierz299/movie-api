@@ -8,6 +8,7 @@ import Header from './components/Header/Header'
 import Watched from './components/Watched/Watched'
 import MovieList from './components/MovieList/MovieList'
 import AddMovie from './components/AddMovie/AddMovie'
+import Test from './components/Test/Test'
 
 
 const App = () => {
@@ -19,6 +20,10 @@ const App = () => {
         <Switch>
           <Route exact path="/" >
             <MovieList />
+          </Route>
+
+          <Route path="/movie-api">
+            <Test />
           </Route>
 
           <Route path="/watched" >
