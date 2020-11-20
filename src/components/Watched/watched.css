@@ -24,6 +24,11 @@
   width: 100px;
 }
 
+.watched-list-img:hover{
+ opacity: .7;
+ cursor: pointer;
+}
+
 .watched-list-overview{
   color: white;
   text-align: left;

@@ -25,3 +25,8 @@ nav > span{
     padding: 3px;
     margin-right: 10px;
 }
+
+nav > span:hover{
+    border-left: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+}
