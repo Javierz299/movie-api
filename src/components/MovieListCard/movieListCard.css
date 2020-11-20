@@ -34,7 +34,8 @@
 .movie-list-details{
     color: whitesmoke;
     padding: 3px;
-    font-size: 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
     line-height: 1.4;
     text-align: left;
 }
