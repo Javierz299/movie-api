@@ -2,3 +2,7 @@
     padding: 0 5px;
     color: whitesmoke;
 }
+
+.pagnation-container > span:hover{
+  cursor: pointer;
+}

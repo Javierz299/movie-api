@@ -7,6 +7,28 @@
     animation-duration: 1s;
 }
 
+.watched-movies-container{
+  display: inline-block;
+  width: 200px;
+}
+
+.watched-list-box{
+  margin: 12px;
+  width: auto;
+  height: 200px;
+  position: relative;
+  /* border: 1px solid white; */
+}
+
+.watched-list-img{
+  width: 100px;
+}
+
+.watched-list-overview{
+  color: white;
+  text-align: left;
+  line-height: 1.4;
+}
 @keyframes overview-in {
     0%   {opacity: 0;}
     25%  {opacity: .2;}

@@ -14,8 +14,8 @@ const WatchedList = () => {
             
            {stored && stored.map(movie => (
                movie === null ? null : 
-            <div className="watched-movies-card" key={movie.id} >
-                    <div>
+            <div className="watched-movies-container" key={movie.id} >
+                    <div className="watched-list-box">
                         <WatchedCard movie={movie}/>
                     </div> 
             </div>

@@ -1,5 +1,5 @@
 .movie-list-overview{
-    background: black;
+    background: rgba(0, 0, 0, 0.502);
     border: 1px solid black;
     margin: 0 auto;
     width: 150px;
@@ -7,10 +7,13 @@
     position: absolute;
     left: 0;
     top: -150px;
-    z-index: 1
+    z-index: 1;
     
 }
 
+.movie-list-container h2{
+    color: whitesmoke;
+}
 
 .movie-list-box{
     display: inline-block;
