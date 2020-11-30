@@ -1,0 +1,15 @@
+.search-list-card{
+    color: #ffffff;
+    /* border: 1px solid white; */
+    width: 250px;
+    display: inline-block;
+}
+
+.search-list-card > img{
+    width: 150px;
+    height: 200px;
+}
+
+.search-list-card > h4{
+    margin: 0;
+}

@@ -9,7 +9,7 @@ const SearchList = () => {
         <section>
             {search_list !== null &&
             search_list.map(movie => (
-                <div key={movie.id}>
+                <div className="search-list-card" key={movie.id}>
                     <MovieCard movie={movie}/>
                 </div>
                 ))   

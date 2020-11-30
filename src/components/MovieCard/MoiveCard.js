@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import config from '../../config/config'
 
+import '../MovieCard/movieCard.css'
 
 const MoiveCard = ({movie}) => {
     const [filtered, setFilter] = useState(null)
@@ -28,12 +29,13 @@ const MoiveCard = ({movie}) => {
     console.log('filtered',filtered,clicked)
     return (
         <Fragment>
-            <h2>{movie.title}</h2>
+            <h3>{movie.title}</h3>
             <h4>{movie.release_date ? movie.release_date.substring(0,4) : 'N/A'}</h4>
             
             <img src={`${config.IMG_ENDPOINT}/${movie.poster_path}`} 
             alt={`${movie.title} Poster`} />
             {!change ? 
+            <div>
             <button onClick={() => local({
                 id: movie.id,
                 title: movie.title,
@@ -44,8 +46,11 @@ const MoiveCard = ({movie}) => {
                 watched: true
             })}>
                 ADD TO WATCHLIST
-                </button> :
+                </button> 
+                </div> :
+                <div>
                 <button>WATCHED</button>
+                </div>
         }
         </Fragment>
     )

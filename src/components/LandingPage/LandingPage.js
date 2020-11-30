@@ -1,7 +1,7 @@
 import React from 'react'
-import '../Test/test.css'
+import './landing.css'
 
-const Test = () => {
+const LandingPage = () => {
     return (
         <div className="testing-container">
             Landing Page
@@ -9,4 +9,4 @@ const Test = () => {
     )
 }
 
-export default Test
+export default LandingPage
