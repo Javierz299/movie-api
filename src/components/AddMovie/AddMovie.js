@@ -3,6 +3,8 @@ import * as ACTIONS from '../../store/actions/actions'
 import config from '../../config/config'
 import axios from 'axios'
 
+import './addMovie.css'
+
 import SearchList from '../SearchList/SearchList'
 
 import { useDispatch } from 'react-redux'
@@ -22,6 +24,7 @@ const AddMovie = () => {
     return (
         <div className="search-container">
             <div className="search-bar-wrapper" >
+                <p>Two character minimum to start search.</p>
                 <input type="text" 
                        placeholder="search for movies" 
                        value={query}
