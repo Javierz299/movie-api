@@ -8,7 +8,7 @@ import Header from './components/Header/Header'
 import Watched from './components/Watched/Watched'
 import MovieList from './components/MovieList/MovieList'
 import AddMovie from './components/AddMovie/AddMovie'
-import Test from './components/Test/Test'
+import LandingPage from './components/LandingPage/LandingPage'
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           </Route>
 
           <Route path="/movie-api">
-            <Test />
+            <LandingPage />
           </Route>
 
           <Route path="/watched" >
